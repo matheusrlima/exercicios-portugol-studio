@@ -1,13 +1,13 @@
 programa
 {
-	cadeia endereco = "Avenida Luis Goulart"
-	inteiro numeroLoja = 115
-
+	real preco = 59.99
+	cadeia nomeProduto = "Vestido"
+	cadeia data = "12/01/2025"
 	
-	funcao inicio()
-	{
-		escreva("Sejam bem vindos à loja XPTO Bikes! Em breve teremos um sistema de autoatendimento \n")
-		escreva("Estamos localizados na ", endereco, " Nº:", numeroLoja)
+	funcao inicio () {
+		escreva(preco)
+		escreva(nomeProduto)
+		escreva(data)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -15,7 +15,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 198; 
+ * @POSICAO-CURSOR = 173; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
