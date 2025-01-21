@@ -4,7 +4,7 @@ programa
 	inteiro numeroLoja = 115
 	cadeia nomeCliente
 	inteiro opcao
-	real valorTotalSemDesconto, percentualDesconto = 0.0, valorDoDesconto, valorTotalComDesconto
+	real valorTotalSemDesconto, percentualDesconto = 0.0, valorDoDesconto
 	caracter lavouBicicleta, trocouPneu, manutencaoFreio
 	
 	funcao inicio()
@@ -65,7 +65,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3053; 
+ * @POSICAO-CURSOR = 2548; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
