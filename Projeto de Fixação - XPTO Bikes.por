@@ -6,9 +6,11 @@ programa
 	inteiro opcao
 	real valorTotalSemDesconto, percentualDesconto = 0.0, valorDoDesconto
 	caracter lavouBicicleta, trocouPneu, manutencaoFreio
+	inteiro contador
 	
 	funcao inicio()
 	{
+		para (contador = 1; contador <= 18; contador++) {
 		escreva("Olá, como você se chama? ")
 		leia(nomeCliente)
 		se(nomeCliente != "xptorestrito") {
@@ -57,7 +59,9 @@ programa
 				valorDoDesconto = (percentualDesconto / 100.00) * valorTotalSemDesconto
 				escreva("Valor do desconto: ", valorDoDesconto, "\n")
 				escreva("\nVALOR FINAL: ", valorTotalSemDesconto - valorDoDesconto, "\n")
-			}	
+			}
+		escreva("\n\n\n")
+		}	
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -65,7 +69,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2548; 
+ * @POSICAO-CURSOR = 315; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
