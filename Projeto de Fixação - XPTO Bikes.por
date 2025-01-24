@@ -7,18 +7,20 @@ programa
 	real valorTotalSemDesconto, percentualDesconto = 0.0, valorDoDesconto
 	caracter lavouBicicleta, trocouPneu, manutencaoFreio
 	inteiro contador
+	cadeia option
+	inteiro contCliente = 0
 	
 	funcao inicio()
 	{
-		para (contador = 1; contador <= 18; contador++) {
+		escreva("Deseja inicializar o programa? (sim ou não) ")
+		leia(option)
+		enquanto (option == "sim") {
 		escreva("Olá, como você se chama? ")
 		leia(nomeCliente)
 		se(nomeCliente != "xptorestrito") {
 		escreva(" \nPrezado(a), ", nomeCliente, ". Seja muito bem-vindo(a) à nossa loja!\n")
 		escreva("Estamos localizados na ", endereco, " Nº:", numeroLoja,"\n")
-		escreva("Oferecemos em nossa loja venda e manutenção de bicicletas. Para venda de bicicletas, procure o colaborador Junior e, para manutenção, procure o colaborador Neto. Obrigado e esperamos que tenha uma ótima experiência em nossa loja.")
-		escreva("\n")
-		escreva("\nO acesso será como cliente ou funcionário? (digite 'C' ou 'F' respectivamente)\n")
+		escreva("Oferecemos em nossa loja venda e manutenção de bicicletas. Para venda de bicicletas, procure o colaborador Junior e, para manutenção, procure o colaborador Neto. Obrigado e esperamos que tenha uma ótima experiência em nossa loja.\n")
 		escreva("\n MENU:\n1 - Ver ofertas de bicicletas usadas\n2 - Ver ofertas de bicicletas novas\n3 - Ver ofertas de acessórios\n4 - Ver novos serviços\n5 - Promoção I 10% de desconto\n6 - Promoção II 20% de desconto")
 		escreva("\nDigite uma opção: ")
 		leia(opcao)
@@ -60,8 +62,13 @@ programa
 				escreva("Valor do desconto: ", valorDoDesconto, "\n")
 				escreva("\nVALOR FINAL: ", valorTotalSemDesconto - valorDoDesconto, "\n")
 			}
+		contCliente++
 		escreva("\n\n\n")
-		}	
+		escreva("Deseja continuar? (sim ou não) ")
+		leia(option)
+		escreva("\n")
+		}
+	escreva("Hoje tivemos na loja a quantidade de ", contCliente, " cliente(s).")
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -69,7 +76,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 315; 
+ * @POSICAO-CURSOR = 3300; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
