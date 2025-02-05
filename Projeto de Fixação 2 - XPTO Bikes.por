@@ -9,7 +9,7 @@ programa
 		inteiro addCarrinho, posicaoAtual = -1, cont, qtdVendaCliente = 0
 		real carrinhoValorProduto[tamanhoVetorCarrinho], valorTotalCarrinho = 0.0, desconto = 0.0
 		real totalVendaDiaria = 0.0
-		caracter tipoPagamento
+		cadeia tipoPagamento
 		
 		escreva("Bem-vindo ao autoatendimento da bicicletaria XPTO Bikes.")
 			faca {
@@ -139,12 +139,48 @@ programa
 													}
 													escreva("\n\nTotal do carrinho: ", valorTotalCarrinho)
 													escreva("\nDigite o tipo de pagamento D(dinheiro) ou C(cartão)")
-													leia
+													leia(tipoPagamento)
+													se (tipoPagamento == "D") {
+														desconto = valorTotalCarrinho * 0.10
+														valorTotalCarrinho = valorTotalCarrinho - desconto
+														}
+													qtdVendaCliente++
+													totalVendaDiaria = totalVendaDiaria + valorTotalCarrinho
+													escreva("\n\nDesconto: ", desconto)
+													escreva("\nValor final: ", valorTotalCarrinho)
+													posicaoAtual = -1
+													valorTotalCarrinho = 0.0
 												}
+											escreva("\n---------------------------\n")
+											pare
+											caso contrario:
+												escreva("Opção inválida")
+											pare
 								}
-							}
-					}
-				}
+							} senao {
+								//Acesso restrito
+								escreva("\n****** ACESSO RESTRITO *****\n")
+									escreva("Digite o nome do cliente: ")
+									leia(nome)
+									escreva("\nDigite o valor total: ")
+									leia(valorTotalCarrinho)
+									escreva("\nDigite o tipo de pagamento D(dinheiro) ou C(cartão): ")
+									leia(tipoPagamento)
+									se (tipoPagamento == "D") {
+										desconto = valorTotalCarrinho * 0.10
+										valorTotalCarrinho = valorTotalCarrinho - desconto
+										}
+										qtdVendaCliente++
+										totalVendaDiaria = totalVendaDiaria + valorTotalCarrinho
+											escreva("\n\nDesconto: ", desconto)
+											escreva("\nValor final: ", valorTotalCarrinho)
+								}
+					} enquanto (opcao != 0)
+				} enquanto (nome != "sair")
+				escreva("\n\n #################\n")
+				escreva("Relatório do dia")
+				escreva("\nQuantidade de clientes: ", qtdVendaCliente)
+				escreva("\nTotal vendido: ", totalVendaDiaria)
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -152,7 +188,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 6053; 
+ * @POSICAO-CURSOR = 536; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
