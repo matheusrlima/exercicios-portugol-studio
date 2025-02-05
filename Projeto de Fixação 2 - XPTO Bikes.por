@@ -84,7 +84,63 @@ programa
 									escreva("\nOpção 8 - Adicionar ao carrinho de compras")
 									escreva("\nOpção 0 - Voltar")
 									escreva("\n*********************\n")
+									escreva("Digite a opção 8 ou 0: ")
+									leia(subOpcao)
+									} enquanto (subOpcao != 8 e subOpcao != 0)
+								se (subOpcao == 8) {
+									se(posicaoAtual == tamanhoVetorCarrinho - 1) {
+										escreva("Carrinho cheio!")
+										} senao {
+											escreva ("Digite o código do produto que deseja adicionar ao carrinho: ")
+											leia(addCarrinho)
+											posicaoAtual++
+											carrinhoCodigoProduto[posicaoAtual] = addCarrinho
+												se (addCarrinho == 201) {
+													carrinhoValorProduto[posicaoAtual] = 59.99
+													carrinhoNomeProduto[posicaoAtual] = "Troca de pneu"
+													} senao se (addCarrinho == 202) {
+														carrinhoValorProduto[posicaoAtual] = 12.99
+														carrinhoNomeProduto[posicaoAtual] = "Lavagem completa"
+														} senao se (addCarrinho == 203) {
+															carrinhoValorProduto[posicaoAtual] = 10.99
+															carrinhoNomeProduto[posicaoAtual] = "Freio"
+															} senao {
+																escreva("Código inválido")
+																posicaoAtual--
+																}
+											}
 									}
+							pare
+							//LISTAR CARRINHO DE COMPRAS
+							caso 3: 
+								escreva("\n---------------------------\n")
+								escreva("Carrinho de compras\n")
+								se(posicaoAtual == -1){
+									escreva("vazio")
+									} senao {
+										para(cont = 0; cont <= posicaoAtual; cont++) {
+											escreva("\n", cont+1, "º item do carrinho: ", carrinhoNomeProduto[cont], "\n")
+											escreva("Código do produto: ", carrinhoCodigoProduto[cont], " | Valor: ", carrinhoValorProduto[cont])
+											valorTotalCarrinho = valorTotalCarrinho + carrinhoValorProduto[cont]
+											}
+											escreva("\n\nTotal do carrinho: ", valorTotalCarrinho)
+										}
+									escreva("\n---------------------------\n")
+									pare
+									caso 4:
+									escreva("\n---------------------------\n")
+									escreva("Finalizar carrinho de compras \n")
+										se (posicaoAtual == -1) {
+											escreva("vazio")
+											} senao {
+												valorTotalCarrinho = 0.0
+												para (cont = 0; cont <= posicaoAtual; cont++) {
+													valorTotalCarrinho = valorTotalCarrinho + carrinhoValorProduto[cont]
+													}
+													escreva("\n\nTotal do carrinho: ", valorTotalCarrinho)
+													escreva("\nDigite o tipo de pagamento D(dinheiro) ou C(cartão)")
+													leia
+												}
 								}
 							}
 					}
@@ -96,7 +152,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3662; 
+ * @POSICAO-CURSOR = 6053; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
